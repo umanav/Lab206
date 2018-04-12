@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Walls.css') }}">
+</head>
+<body>
+    <div id ="wrapper">
+        <div id = "head">
+        <h1>CodingDojo Wall</h1>
+        <h3> Welcome : {{session['full_name']}}</h3>
+        <form action="/logOut">
+            <input type="submit" value="Log Out">
+        </form>
+        </div>
+        <div id="post">
+        <form action="/post_message" method="POST">
+            <h3>Post a message</h3>
+            <textarea name="post_message" id="post_message" cols="200" rows="10"></textarea><br>
+            <input type="submit" value="Post a message">
+        </form> 
+        </div>
+        {% for post in all_posts: %}
+        <div id="messages" >
+            <h4>{{ post['name'] }}</h4>
+            <h4>{{ post['date'] }}</h4><br>
+            <p>{{ post['message'] }}</p>
+            <!-- {% if post['id'] == session['user']: %}
+                <form id="delete" action=""><input type="submit" value="Delete"></form>
+            {% endif %} -->
+            {% for comment in my_comments: %}
+            <div id="comments" >
+                {% if comment['message_id'] ==post['message_id'] %}
+                    <h4>{{ comment['name'] }}</h4>
+                    <h4>{{ comment['date'] }}</h4><br>
+                    <p>{{ comment['comment'] }}</p>
+                    <!-- {% if comment['id'] == session['user']: %}
+                        <form id="delete" action=""><input type="submit" value="Delete"></form>
+                    {% endif %} -->
+                {% endif %}
+            </div>
+            {% endfor %}
+            <form action="/post_comment" method="POST">
+                <input type="hidden" value="{{post['message_id']}}" name="message_id">
+                <textarea name="post_comment" id="post_comment" cols="200" rows="5"></textarea><br>
+                <input type="submit" value="Post a comment">
+            </form>
+        </div>
+        <br>
+        {% endfor %}
+    </div>  
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Amadon</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'Amadon_app/css/bootstrap.css' %}" media="screen" title="no title"  charset="utf-8">
+    <link rel="stylesheet" href="{% static 'Amadon_app/css/main.css' %}" media="screen" title="no title"  charset="utf-8">
+</head>
+<body>
+    <h1>Amadon Store</h1>
+    <table class="table">
+        <thead>
+            <tr>
+            <th scope="col">Item</th>
+            <th scope="col">Price</th>
+            <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in request.session.products %}
+                <tr>
+                <td>{{product.item}}</td>
+                <td>{{product.price}}</td>
+                <td><form action='/amadon/buy' method='post'>
+                    {% csrf_token %}
+                    <select name='quantity'>
+                       <option>1</option>
+                       <option>2</option>
+                       <option>3</option>
+                    </select>
+                    <input type='hidden' name='id' value='{{product.id}}' />
+                    <input type='submit' value='Buy!' />
+                </form>
+                </td>   
+                </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>survey Form</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'SurveyForm/css/index.css' %}" media="screen" title="no title"  charset="utf-8">
+</head>
+<body>
+    <div id='form'>
+        <form action="/surveys/process" method="post">
+            {% csrf_token %}
+            <p>name: <input type="text" name="name"</p>
+            <p>Location: <select name="location">
+                <option value="San Jose">San Jose</option>
+                <option value="Arizona">Arizona</option>
+            </select></p>
+            <p>Favorite Language: <select name="language">
+                <option value="Python">Python</option>
+                <option value="Javascript">Arizona</option>
+                <option value="Java">Java</option>
+            </select></p>
+            <p>Comment(Optional):<br><textarea name="comment" rows="10" cols="30"></textarea></p>
+            <p><input type="submit"></p>
+        </form>  
+    </div>
+</body>
+</html>

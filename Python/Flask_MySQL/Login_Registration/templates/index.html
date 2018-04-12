@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+<body>
+    <div id = "wrapper">
+        <h1>Please Register or Log In</h1>  
+        <div class ="access"> 
+            <h2>Register</h2>
+            <form action="/register" method='post'>
+                <label for="first_name">First Name  <input type="text" name="first_name" id="first_name"></label>
+                <label for="last_name">Last Name  <input type="text" name="last_name" id="last_name"></label>
+                <label for="email">Email  <input type="text" name="email" id="email"></label>
+                <label for="password">Password  <input type="password" name="password" id="password"></label>
+                <label for="confirm_password">Confirm Password  <input type="password" name="confirm_password" id="confirm_password"></label>
+                <input type="submit" value="Submit">
+            </form> 
+            {% with messages = get_flashed_messages(category_filter=["registration"]) %}
+                {% if messages %}
+                    <ul>
+                    {% for message in messages %}
+                        <li>{{message}}</li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+        </div>
+        <div class ="access">
+            <h2>Log In</h2>
+            <form action="/logIn" method='post'>
+                <label for="email">Email  <input type="text" name="email" id="email"></label>
+                <label for="password">Password  <input type="password" name="password" id="password"></label>
+                <input type="submit" value="Submit">    
+            </form> 
+            {% with messages = get_flashed_messages(category_filter=["logIn"]) %}
+                {% if messages %}
+                    <ul>
+                    {% for message in messages %}
+                        <li>{{message}}</li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+.form{
+    width: 170px;
+    display: inline-block; 
+    border: 1px solid black;
+    margin: 20px;
+}
+#act{
+    width: 890px;
+    height: 500px;
+    border: 1px solid black;
+    overflow: scroll;
+}

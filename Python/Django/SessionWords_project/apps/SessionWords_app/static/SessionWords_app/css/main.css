@@ -1,0 +1,30 @@
+#Add{
+    border:2px solid black;
+    width: 500px;
+    display: inline-block;
+    padding: 20px;
+    text-align: center;
+}
+#show{
+    border:2px solid black;
+    width: 500px;
+    display: inline-block;
+    vertical-align: top;
+    padding: 20px;
+    text-align: center;
+}
+
+.Blue{
+    color : blue;
+}
+.Green{
+    color:green;
+}
+.Red{
+    color:red;
+}
+.big_font{
+    font-size: 40px;
+    font-weight: bold;
+}
+

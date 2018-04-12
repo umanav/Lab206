@@ -1,0 +1,22 @@
+#wrapper{
+    width: 800px;
+    margin: 0px auto;
+    padding: 0px 10px;
+}
+.access{
+    display: inline-block;
+    width: 340px;
+    vertical-align: top;
+    border: 2px solid black;
+    padding: 25px;
+}
+label{
+    width: 320px;
+    display: block;
+}
+h1{
+    text-align: center;
+    border: 2px solid black;
+    margin-top: 25px;
+    margin-bottom: 0px;
+}

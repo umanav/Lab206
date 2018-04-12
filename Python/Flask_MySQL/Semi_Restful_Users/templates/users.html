@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Users</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/users.css') }}">
+</head>
+<body>
+  <h1>Users:</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>Full Name</th>
+        <th>Email</th>
+        <th>Created At</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for friend in all_friends: %}
+      <tr>
+        <td>{{ friend['id'] }}</td>
+        <td>{{ friend['name'] }}</td>
+        <td>{{ friend['email'] }}</td>
+        <td>{{ friend['created'] }}</td>
+        <td><a href="/users/{{friend['id']}}"> Show </a><a href=""> Edit </a><a href=""> Delete </a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <br>
+  <a href="/users/new" method="GET">Add a New User</a>
+</body>
+</html>

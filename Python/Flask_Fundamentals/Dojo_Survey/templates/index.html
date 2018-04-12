@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css')}}">
+</head>
+<body>
+    <div class="container"> 
+        <form action='/results' method='post'>
+            Name: <input type='text' name='name' class="items" style="display:block">
+            Dojo Location: <input type='text' name='location'class="items" style="display:block">
+            Favorite Language<select class="items" name="language" style="display:block">
+                <option class="items" value="English">English</option>
+                <option class="items"value="Spanish">Spanish</option>
+                <option class="items"value="Italian">Italian</option>
+                <option class="items"value="French">French</option>
+            </select>
+            Comment (optional) <textarea name="comment" rows="10" cols="30" style="display:block"></textarea>
+            <input type='submit' value='create user'>
+        </form>
+    </div>
+</body>
+</html>

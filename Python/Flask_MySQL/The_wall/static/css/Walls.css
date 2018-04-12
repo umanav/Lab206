@@ -1,0 +1,57 @@
+#wrapper{
+    padding: 20px;
+}
+#head {
+    border: 2px solid black;
+    background-color: blue;
+}
+#head h1{
+    display: inline-block;
+    color:white;
+}
+#head h3{
+    display: inline-block;
+    padding-left: 500px;
+    color:white;
+}
+#head form{
+    display: inline-block;
+    padding-left: 800px;
+}
+#messages h4{
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+#messages p{
+    display: inline-block;
+    margin:20px;
+}
+#messages form{
+    margin:20px;
+}
+#messages{
+    border: 2px solid black;
+    margin: 0px auto;
+    display: inline-block;
+}
+#comments h4{
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+#comments p{
+    display: inline-block;
+    margin:20px;
+}
+#comments form{
+    margin:20px;
+}
+#comments{
+
+    margin: 0px auto;
+    padding-left: 40px;
+}
+#delete{
+    display: inline-block;
+}

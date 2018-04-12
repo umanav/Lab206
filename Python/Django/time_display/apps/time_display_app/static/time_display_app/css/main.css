@@ -1,0 +1,15 @@
+div{
+    display: inline-block;
+    width: 500px;
+    text-align: center;
+}
+#header{
+    border: 2px solid black;
+    
+}
+#body{
+    border: 2px solid black;
+}
+p{
+    display: inline-block;
+}
